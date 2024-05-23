@@ -30,6 +30,17 @@ const rollDice = () => {
     });
 };
 
+const updateStats = () => {
+    currentRoundRollsText.textContent = rolls;
+    currentRoundText.textContent = round;
+};
+  
+const updateRadioOption = (optionNode, score) => {
+    scoreInputs[optionNode].disabled = false;
+    scoreInputs[optionNode].value = score;
+    scoreSpans[optionNode].textContent = `, score = ${score}`;
+};
+
 rollDiceBtn.addEventListener("click", () => {
     if (rolls === 3) {
       alert("You have made three rolls this round. Please select a score.");
